@@ -6,10 +6,11 @@ Repositório para a disciplina Estrutura de Dados dos cursos de Informática do 
 2. [Objetivo Geral]
 3. [Objetivo Específico]
 4. [Cronograma]
-5. [Trabalhos]
-6. [Bibliografia]
-7. [Extras]
-8. [Contributing]
+5. [Exercicios]
+6. [Trabalhos]
+7. [Bibliografia]
+8. [Extras]
+9. [Contributing]
 
 ## Ementa
 ----
@@ -57,6 +58,17 @@ Adquirir uma base sólida de conceitos fundamentais na implementação de estrut
 
 Data        |   Evento                  |   Atividade
 ---         |   ---                     |   ---
+
+## Exercicios
+----
+
+<br/>
+<div align="right">
+    <b><a href="#indice">↥ Voltar para o indice</a></b>
+</div>
+<br/>
+
+**A definir**
 
 ## Trabalhos
 ----
@@ -117,6 +129,7 @@ Sinta-se livre para sugerir melhorias, materiais e outras contribuições via Is
 [Objetivo Geral]: #objetivo-geral
 [Objetivo Específico]: #objetivo-específico
 [Cronograma]: #cronograma
+[Exercicios]: #exercicios
 [Trabalhos]: #trabalhos
 [Bibliografia]: #bibliografia
 [Extras]: #extras
