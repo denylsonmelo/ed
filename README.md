@@ -68,7 +68,7 @@ Data        |   Evento                  |   Atividade
 </div>
 <br/>
 
-**A definir**
+* [Listas de Exercicios]
 
 ## Trabalhos
 ----
@@ -136,6 +136,8 @@ Sinta-se livre para sugerir melhorias, materiais e outras contribuições via Is
 [Bibliografia]: #bibliografia
 [Extras]: #extras
 [Contributing]: #contributing
+
+[Listas de Exercicios]: https://github.com/denylsonmelo/ed/tree/master/src/main/java/br/edu/ifpi/capar/ed/exercicios
 
 [Estruturas de dados e algoritmos em Java. 4a Edição.]: http://sardes.ifpi.edu.br/pergamum/mobile/resultado_info.php?cod_acervo=1709
 [Estruturas de Dados e Seus Algoritmos. 2 ed.]: http://sardes.ifpi.edu.br/pergamum/mobile/resultado_info.php?cod_acervo=16556
