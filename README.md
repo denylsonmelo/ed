@@ -98,8 +98,6 @@ Data        |   Evento                  |   Atividade
 * Galante, R. E. **Estruturas de Dados. 1a Edição.** Edira Bookman, 2012.
 
 
-**Os livros com links possuem exemplares na biblioteca do Campus Parnaíba, os demais encontram-se listados no PPC do curso.**
-
 ## Extras
 ----
 
