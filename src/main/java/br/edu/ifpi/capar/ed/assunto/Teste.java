@@ -1,4 +1,4 @@
-package br.edu.ifpi.capar.ed;
+package br.edu.ifpi.capar.ed.assunto;
 
 /**
  *
