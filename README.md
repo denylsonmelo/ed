@@ -90,9 +90,15 @@ Data        |   Evento                  |   Atividade
 </div>
 <br/>
 
-* GOODRICH, M. T.; TAMASSIA, R. **Estruturas de dados e algoritmos em Java. 4ª Edição.** Bookman, 2007.
-* SZWARCFITER, J. L.; MARKENZON, L. **Estruturas de Dados e Seus Algoritmos. 2 ed.** LTC, 1994.
-* LAFORE, R. **Estruturas de Dados e Algoritmos em Java.** Ciência Moderna, 2005.
+* Goodrich, M. T.; Tamassia, R. **Estruturas de dados e algoritmos em Java. 4a Edição.** Bookman, 2007.
+* Szwarcfiter, J. L.; Markenzon, L. **Estruturas de Dados e Seus Algoritmos. 2 ed.** LTC, 1994.
+* Lafore, R. **Estruturas de Dados e Algoritmos em Java.** Ciência Moderna, 2005
+* Ascencio, A. F. G.; Araújo, G. S. de. **Estruturas de dados: algoritmos, análise da complexidade e
+implementações em Java e C/C++.** São Paulo: Pearson Prentice Hall, 2010. xii, 432 p. ISBN 978-85-
+7605-881-6.
+* Pereira, S. L. **Estruturas De Dados Fundamentais. 8a Edição.** Editora Érica, 2000.
+* Galante, R. E. **Estruturas de Dados. 1a Edição.** Edira Bookman, 2012.
+
 
 **Os livros com links possuem exemplares na biblioteca do Campus Parnaíba, os demais encontram-se listados no PPC do curso.**
 
