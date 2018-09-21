@@ -7,17 +7,21 @@ package br.edu.ifpi.capar.ed.assunto.objeto;
 public class Aluno {
 
     private long matricula;
-    private String nome;
+    private String nomeDaClasse;
     private int idade;
     private String disciplina;
     private double nota;
 
-    public Aluno(String nome){
-        this.nome = nome;
+    public Aluno(){
+        this.nomeDaClasse = "nome não foi informado";
+    }
+    
+    public Aluno(String nomeRecebido){
+        this.nomeDaClasse = nomeRecebido;
     }
     
     public String getNome() {
-        return this.nome;
+        return this.nomeDaClasse;
     }
 
 }

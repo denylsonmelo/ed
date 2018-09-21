@@ -185,3 +185,4 @@ nbdist/
 
 .classpath
 .project
+/nbproject/
