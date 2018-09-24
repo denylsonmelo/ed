@@ -1,0 +1,34 @@
+* Senha: matricula( TINF )
+
+Nome        |   Usuário
+---         |   ---
+Alaine    |   br_ifpicapar_jfo03_s01
+Milena    |   br_ifpicapar_jfo03_s02
+Santiago    |   br_ifpicapar_jfo03_s03
+Artur    |   br_ifpicapar_jfo03_s04
+Beatriz    |   br_ifpicapar_jfo03_s05
+Breno  |   br_ifpicapar_jfo03_s06
+Claudemir   |   br_ifpicapar_jfo03_s08
+Davi |   br_ifpicapar_jfo03_s09
+Dionis   |   br_ifpicapar_jfo03_s10
+Elias |   br_ifpicapar_jfo03_s11
+Emmanuel  |   br_ifpicapar_jfo03_s12
+Fernanda |   br_ifpicapar_jfo03_s13
+Valentina  |   br_ifpicapar_jfo03_s14
+Assis   |   br_ifpicapar_jfo03_s15
+Geyssy  |   br_ifpicapar_jfo03_s16
+Gilvan   |   br_ifpicapar_jfo03_s17
+Henrique    |   br_ifpicapar_jfo03_s18
+Iuri |   br_ifpicapar_jfo03_s19
+Jailson   |   br_ifpicapar_jfo03_s20
+José  |   	br_ifpicapar_jfo03_s21
+Joyce  |   br_ifpicapar_jfo03_s22
+Kleiton    |   br_ifpicapar_jfo03_s23
+Lana   |   br_ifpicapar_jfo03_s24
+Gustavo |   br_ifpicapar_jfo03_s25
+Luzia  |   br_ifpicapar_jfo03_s26
+Savio |   br_ifpicapar_jfo03_s27
+Taynnar  |   br_ifpicapar_jfo03_s28
+Thiago |   br_ifpicapar_jfo03_s29
+Vitoria    |   br_ifpicapar_jfo03_s30
+Wendel |   br_ifpicapar_jfo03_s31

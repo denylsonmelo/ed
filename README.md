@@ -107,7 +107,7 @@ Data        |   Evento                  |   Atividade
 </div>
 <br/>
 
-**A definir**
+* [Oracle Academy - iLearning] - [Listas de Usuários]
 
 ## Contributing
 ----
@@ -143,3 +143,6 @@ Sinta-se livre para sugerir melhorias, materiais e outras contribuições via Is
 [Estruturas de Dados e Seus Algoritmos. 2 ed.]: http://sardes.ifpi.edu.br/pergamum/mobile/resultado_info.php?cod_acervo=16556
 [Estruturas de Dados e Algoritmos em Java.]: http://sardes.ifpi.edu.br/pergamum/mobile/resultado_info.php?cod_acervo=6710
 [Estruturas De Dados Fundamentais. 8a Edição.]: http://sardes.ifpi.edu.br/pergamum/mobile/resultado_info.php?cod_acervo=3684
+
+[Oracle Academy - iLearning]: http://ilearning.oracle.com/ilearn/en/learner/jsp/login.jsp?site=OracleAcad
+[Listas de Usuários]: src/main/java/br/edu/ifpi/capar/ed/oracle/usuarios.md
