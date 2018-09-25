@@ -1,6 +1,8 @@
 package br.edu.ifpi.capar.ed.assunto.objeto;
 
-import org.junit.Assert;
+import static br.edu.ifpi.capar.ed.assunto.objeto.Aluno.getIdadeMinima;
+import static br.edu.ifpi.capar.ed.assunto.objeto.Aluno.getNotaMinimaPermitida;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,40 +13,60 @@ import org.junit.Test;
 public class AlunoTest {
 
     public Aluno aluno;
+    public int idade;
     
     @Before
     public void preparacoesIniciais(){
-        aluno = new Aluno("Gustavo", Aluno.getIdadeMinima() + 3);
+        idade = getIdadeMinima() + 3;
+        aluno = new Aluno("Gustavo", idade);
+    }
+    
+    @Test
+    public void deveAceitarNotaMaiorQueAMinima(){
+        this.aluno.atribuirNota(8);
+        
+        assertEquals(8, this.aluno.visualizarNotas()[0], 0.1);
+    }
+    
+    @Test
+    public void deveAceitarNotaIgualComAMinima(){
+        this.aluno.atribuirNota(getNotaMinimaPermitida());
+        
+        assertEquals(getNotaMinimaPermitida(), this.aluno.visualizarNotas()[0], 0.1);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void naoDeveAceitarNotaMenorQueAMinima(){
+        this.aluno.atribuirNota(getNotaMinimaPermitida()-1);
+    }
+    
+    @Test
+    public void deveAceitarAlunoComAIdadeMinima(){
+        var aluno = new Aluno("gustavo", getIdadeMinima());
+        
+        assertEquals(getIdadeMinima(), aluno.getIdade());        
     }
     
     @Test(expected = IllegalArgumentException.class)
     public void deveRejeitarMudancaIdadeAbaixoDaMinima(){
-        aluno.mudarPara(Aluno.getIdadeMinima()-1);
+        aluno.mudarIdadePara(getIdadeMinima()-1);
     }
     
     @Test
     public void deveAceitarAlunoComMaisQueIdadeMinima(){
-        Assert.assertEquals(18, aluno.getIdade());
+        assertEquals(idade, aluno.getIdade());
     }
     
     @Test(expected = IllegalArgumentException.class)
     public void deveRejeitarAlunoComMenosQueIdadeMinima(){
-        Aluno aluno = new Aluno("Gustavo", 14);
-        //Assert.fail("teste ainda nao implementado");
+        var aluno = new Aluno("Gustavo", getIdadeMinima()-2);
     }
     
     
     @Test
     public void deveTerONomePassadoNoConstrutorComParametros() {
-        Assert.assertEquals("Gustavo", aluno.getNome());
+        assertEquals("Gustavo", aluno.getNome());
 
     }
 
-    @Test
-    public void deveTerUmTextoGenericoNoConstrutorSemParametros() {
-        Aluno aluno1 = new Aluno(); // construtor
-
-        Assert.assertEquals("nome não foi informado", aluno1.getNome());
-
-    }
 }
