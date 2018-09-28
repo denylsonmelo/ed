@@ -1,0 +1,148 @@
+package br.edu.ifpi.capar.ed.assunto.objeto.sistema;
+
+import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getIdadeMinima;
+import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getNotaMaximaPermitida;
+import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getNotaMinimaPermitida;
+import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getQuantidadeMaximaNotas;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ *
+ * @author seijuh
+ */
+public class AlunoTest {
+
+    public Aluno aluno;
+    public int idade;
+
+    @Before
+    public void preparacoesIniciais() {
+        idade = getIdadeMinima() + 3;
+        aluno = new Aluno("Gustavo", idade);
+    }
+
+    @Test()
+    public void deveCalcularAMediaCorretamente() {
+        this.aluno.atribuirNota(5);
+        this.aluno.atribuirNota(7);
+        this.aluno.atribuirNota(8);
+        this.aluno.atribuirNota(5);
+
+        assertEquals(6.25, this.aluno.media(), 0.01);
+    }
+
+    @Test()
+    public void deveGarantirQueOAlunoSoTenhaQuantidadeMaximaNotasPermitida() {
+        for (int i = 0; i < getQuantidadeMaximaNotas(); i++) {
+            this.aluno.atribuirNota(3 + i);
+        }
+        this.aluno.atribuirNota(5);
+        this.aluno.atribuirNota(5);
+
+        assertEquals(4, aluno.getQuantidadeNotasAtribuidas());
+        for (int i = 0; i < getQuantidadeMaximaNotas(); i++) {
+            assertEquals(i + 3, aluno.visualizarNotas()[i], 0.1);
+        }
+    }
+
+    @Test()
+    public void notasNaoAtribuidasDevemTerValorMinimo() {
+        this.aluno.atribuirNota(5);
+
+        assertEquals(1, aluno.getQuantidadeNotasAtribuidas());
+        assertEquals(5, aluno.visualizarNotas()[0], 0.1);
+        for (int i = 1; i < getQuantidadeMaximaNotas(); i++) {
+            assertEquals(getNotaMinimaPermitida(), aluno.visualizarNotas()[i], 0.1);
+        }
+    }
+
+    @Test()
+    public void deveTerAQuantidadeDeNotasAtribuidas() {
+
+        double[] notas = new double[4];
+        notas[0] = 7;
+        notas[1] = 11;
+        notas[2] = 8;
+        notas[3] = -1;
+
+        for (int i = 0; i < 4; i++) {
+            try {
+                this.aluno.atribuirNota(notas[i]);
+            } catch (IllegalArgumentException argumentException) {
+                System.out.println("fazer nada");
+            }
+        }
+
+        assertEquals(2, aluno.getQuantidadeNotasAtribuidas());
+        assertEquals(7, aluno.visualizarNotas()[0], 0.1);
+        assertEquals(8, aluno.visualizarNotas()[1], 0.1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void naoDeveAceitarNotaMaiorQueAMaxima() {
+        this.aluno.atribuirNota(getNotaMaximaPermitida() + 1);
+    }
+
+    @Test
+    public void deveAceitarNotaIgualComAMaxima() {
+        this.aluno.atribuirNota(getNotaMaximaPermitida());
+
+        assertEquals(getNotaMaximaPermitida(), this.aluno.visualizarNotas()[0], 0.1);
+    }
+
+    @Test()
+    public void deveAceitarNotaMenorQueAMaxima() {
+        this.aluno.atribuirNota(8);
+        assertEquals(8, this.aluno.visualizarNotas()[0], 0.1);
+    }
+
+    @Test
+    public void deveAceitarNotaMaiorQueAMinima() {
+        this.aluno.atribuirNota(8);
+
+        assertEquals(8, this.aluno.visualizarNotas()[0], 0.1);
+    }
+
+    @Test
+    public void deveAceitarNotaIgualComAMinima() {
+        this.aluno.atribuirNota(getNotaMinimaPermitida());
+
+        assertEquals(getNotaMinimaPermitida(), this.aluno.visualizarNotas()[0], 0.1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void naoDeveAceitarNotaMenorQueAMinima() {
+        this.aluno.atribuirNota(getNotaMinimaPermitida() - 1);
+    }
+
+    @Test
+    public void deveAceitarAlunoComAIdadeMinima() {
+        var aluno = new Aluno("gustavo", getIdadeMinima());
+
+        assertEquals(getIdadeMinima(), aluno.getIdade());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void deveRejeitarMudancaIdadeAbaixoDaMinima() {
+        aluno.mudarIdadePara(getIdadeMinima() - 1);
+    }
+
+    @Test
+    public void deveAceitarAlunoComMaisQueIdadeMinima() {
+        assertEquals(idade, aluno.getIdade());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void deveRejeitarAlunoComMenosQueIdadeMinima() {
+        var aluno = new Aluno("Gustavo", getIdadeMinima() - 2);
+    }
+
+    @Test
+    public void deveTerONomePassadoNoConstrutorComParametros() {
+        assertEquals("Gustavo", aluno.getNome());
+
+    }
+
+}
