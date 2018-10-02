@@ -23,6 +23,57 @@ public class AlunoTest {
         aluno = new Aluno("Gustavo", idade);
     }
 
+    @Test
+    public void deveArredondarMediaComMenos2CasasDecimais(){
+        this.aluno.atribuirNota(5);
+        this.aluno.atribuirNota(7);
+        this.aluno.atribuirNota(8);
+        this.aluno.atribuirNota(5.2);
+        
+        assertEquals(6.3, this.aluno.media(), 0.0001);
+    }
+    
+    @Test
+    public void naoDeveArredondarMediaCom2CasasDecimais(){
+        this.aluno.atribuirNota(5);
+        this.aluno.atribuirNota(7);
+        this.aluno.atribuirNota(8);
+        this.aluno.atribuirNota(5.48);
+        
+        assertEquals(6.37, this.aluno.media(), 0.0001);
+    }
+    
+    @Test
+    public void deveArredondarMediaComMais3CasasDecimais(){
+        this.aluno.atribuirNota(5);
+        this.aluno.atribuirNota(7);
+        this.aluno.atribuirNota(8);
+        this.aluno.atribuirNota(5.5);
+        
+        assertEquals(6.37, this.aluno.media(), 0.0001);
+    }
+    
+    @Test
+    public void naoDeveArredondarNotaComMenos2CasasDecimais(){
+        this.aluno.atribuirNota(5.4);
+        
+        assertEquals(5.40, this.aluno.visualizarNotas()[0], 0.0001);
+    }
+    
+    @Test
+    public void naoDeveArredondarNotaCom2CasasDecimais(){
+        this.aluno.atribuirNota(5.41);
+        
+        assertEquals(5.41, this.aluno.visualizarNotas()[0], 0.0001);
+    }
+    
+    @Test
+    public void deveArredondarNotaComMaisDe3CasasDecimais(){
+        this.aluno.atribuirNota(5.426);
+        
+        assertEquals(5.42, this.aluno.visualizarNotas()[0], 0.0001);
+    }
+    
     @Test()
     public void deveCalcularAMediaCorretamente() {
         this.aluno.atribuirNota(5);

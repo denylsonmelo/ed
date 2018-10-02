@@ -1,5 +1,6 @@
 package br.edu.ifpi.capar.ed.assunto.objeto.sistema;
 
+import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.arredondarDuasCasas;
 import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getIdadeMinima;
 import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getNotaMaximaPermitida;
 import static br.edu.ifpi.capar.ed.assunto.objeto.sistema.Configuracao.getNotaMinimaPermitida;
@@ -22,19 +23,19 @@ public class Aluno {
         return this.notas;
     }
 
-    public double media(){
+    public double media() {
         double soma = 0;
         for (int i = 0; i < this.notas.length; i++) {
             soma += this.notas[i];
         }
-        
-        return soma/ this.notas.length;
+
+        return arredondarDuasCasas(soma / this.notas.length);
     }
-    
+
     public void atribuirNota(double nota) throws IllegalArgumentException {
         if (quantNotasAtribuidas < getQuantidadeMaximaNotas()) {
             if (nota >= getNotaMinimaPermitida() && nota <= getNotaMaximaPermitida()) {
-                this.notas[this.quantNotasAtribuidas] = nota;
+                this.notas[this.quantNotasAtribuidas] = arredondarDuasCasas(nota);
                 this.quantNotasAtribuidas++;
             } else {
                 throw new IllegalArgumentException("Nota fora dos padroes de minima ou maxima, verifique");
