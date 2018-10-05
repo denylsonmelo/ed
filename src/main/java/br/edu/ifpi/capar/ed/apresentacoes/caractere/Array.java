@@ -1,4 +1,4 @@
-package br.edu.ifpi.capar.ed.assunto.caractere;
+package br.edu.ifpi.capar.ed.apresentacoes.caractere;
 
 /**
  * 
