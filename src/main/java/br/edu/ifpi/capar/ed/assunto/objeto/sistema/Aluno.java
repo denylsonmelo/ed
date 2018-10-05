@@ -19,6 +19,40 @@ public class Aluno {
     private double[] notas;
     private int quantNotasAtribuidas;
 
+    
+    //TODO faltando os alunos realizarem a otimizacao dos metodos
+    public void atribuirQuartaNota(double nota) {
+        if (nota >= getNotaMinimaPermitida() && nota <= getNotaMaximaPermitida()) {
+            this.notas[3] = arredondarDuasCasas(nota);
+        } else {
+            throw new IllegalArgumentException("Nota fora dos padroes de minima ou maxima, verifique");
+        }
+    }
+
+    public void atribuirTerceiraNota(double nota) {
+        if (nota >= getNotaMinimaPermitida() && nota <= getNotaMaximaPermitida()) {
+            this.notas[2] = arredondarDuasCasas(nota);
+        } else {
+            throw new IllegalArgumentException("Nota fora dos padroes de minima ou maxima, verifique");
+        }
+    }
+
+    public void atribuirSegundaNota(double nota) {
+        if (nota >= getNotaMinimaPermitida() && nota <= getNotaMaximaPermitida()) {
+            this.notas[1] = arredondarDuasCasas(nota);
+        } else {
+            throw new IllegalArgumentException("Nota fora dos padroes de minima ou maxima, verifique");
+        }
+    }
+
+    public void atribuirPrimeiraNota(double nota) {
+        if (nota >= getNotaMinimaPermitida() && nota <= getNotaMaximaPermitida()) {
+            this.notas[0] = arredondarDuasCasas(nota);
+        } else {
+            throw new IllegalArgumentException("Nota fora dos padroes de minima ou maxima, verifique");
+        }
+    }
+
     public double[] visualizarNotas() {
         return this.notas;
     }

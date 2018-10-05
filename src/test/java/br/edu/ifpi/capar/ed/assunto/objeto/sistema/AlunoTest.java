@@ -24,6 +24,36 @@ public class AlunoTest {
     }
 
     @Test
+    public void devePermitirAtribuirAQuartaNota(){
+        this.aluno.atribuirQuartaNota(5.265);
+        
+        assertEquals(5.26, this.aluno.visualizarNotas()[3], 0.0001);
+    }
+    
+
+    @Test
+    public void devePermitirAtribuirTerceiraNota(){
+        this.aluno.atribuirTerceiraNota(5.265);
+        
+        assertEquals(5.26, this.aluno.visualizarNotas()[2], 0.0001);
+    }
+    
+
+    @Test
+    public void devePermitirAtribuirASegundaNota(){
+        this.aluno.atribuirSegundaNota(5.265);
+        
+        assertEquals(5.26, this.aluno.visualizarNotas()[1], 0.0001);
+    }
+    
+    @Test
+    public void devePermitirAtribuirAPrimeiraNota(){
+        this.aluno.atribuirPrimeiraNota(5.265);
+        
+        assertEquals(5.26, this.aluno.visualizarNotas()[0], 0.0001);
+    }
+    
+    @Test
     public void deveArredondarMediaComMenos2CasasDecimais(){
         this.aluno.atribuirNota(5);
         this.aluno.atribuirNota(7);
@@ -72,6 +102,13 @@ public class AlunoTest {
         this.aluno.atribuirNota(5.426);
         
         assertEquals(5.42, this.aluno.visualizarNotas()[0], 0.0001);
+    }
+    
+    @Test()
+    public void deveCalcularAMediaCorretamenteMesmoComNotasFaltando() {
+        this.aluno.atribuirNota(8);
+
+        assertEquals(2, this.aluno.media(), 0.01);
     }
     
     @Test()
