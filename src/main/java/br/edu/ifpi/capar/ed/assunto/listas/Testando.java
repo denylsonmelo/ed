@@ -11,7 +11,7 @@ public class Testando {
         var materia2 = new Materia("Analise de Dados", "60");
         var materia3 = new Materia("Projeto de Banco", "60");
         
-        MateriaLista lista = new MateriaLista();
+        Lista lista = new Lista();
         lista.adicionar(materia1);
         lista.adicionar(materia2);
         lista.adicionar(materia3);
