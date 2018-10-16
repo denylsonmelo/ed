@@ -6,13 +6,24 @@ package br.edu.ifpi.capar.ed.assunto.listas;
  */
 public class ElementoLista {
 
-    private Materia proximo;
+    private Materia materia;
+    private ElementoLista proximo;
 
-    public Materia irParaProximo() {
+    public ElementoLista irParaProximo() {
         return this.proximo;
     }
 
-    public void definirProximo(Materia materia) {
-        this.proximo = materia;
+    public void definirProximo(ElementoLista elemento) {
+        this.proximo = elemento;
+    }
+
+    public ElementoLista(Materia materia) {
+        this.materia = materia;
+        this.proximo = null;
+    }
+    
+    @Override
+    public String toString(){
+        return this.materia.getNome();
     }
 }
