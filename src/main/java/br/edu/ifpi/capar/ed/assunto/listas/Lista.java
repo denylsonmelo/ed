@@ -14,16 +14,30 @@ public class Lista {
         return this.total;
     }
 
-    public void adicionar(Materia nova) {
-        ElementoLista elementoNovo = new ElementoLista(nova);
+    public void adicionarNoInicio(Materia materiaNova) {
+        ElementoLista elementoNovo = new ElementoLista(materiaNova);
+        
+        if(totalElementos() == 0){
+            this.primeiro = this.ultimo = elementoNovo;
+        }else{
+            ElementoLista elementoTemporario = this.primeiro;
+            this.primeiro = elementoNovo;
+            elementoNovo.definirProximo(elementoTemporario);
+        }
+        
+        this.total++;
+    }
+    
+    public void adicionarNoFinal(Materia materiaNova) {
+        ElementoLista elementoNovo = new ElementoLista(materiaNova);
 
-        if (total == 0) {
+        if (totalElementos() == 0) {
             this.primeiro = elementoNovo;
             this.ultimo = elementoNovo;
         } else {
-            ElementoLista temporario = this.ultimo;
+            ElementoLista elementoTemporario = this.ultimo;
             this.ultimo = elementoNovo;
-            temporario.definirProximo(elementoNovo);
+            elementoTemporario.definirProximo(elementoNovo);
         }
 
         this.total++;

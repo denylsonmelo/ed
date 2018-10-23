@@ -6,7 +6,7 @@ package br.edu.ifpi.capar.ed.assunto.listas;
  */
 public class ElementoLista {
 
-    private Materia materia;
+    private final Materia materia;
     private ElementoLista proximo;
 
     public ElementoLista irParaProximo() {
