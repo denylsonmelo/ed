@@ -5,7 +5,7 @@ package br.edu.ifpi.capar.ed.assunto.listas;
  * @author seijuh
  */
 public class Testando {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         var materia0 = new Materia("Algoritmos 1", "60");
         var materia1 = new Materia("Fundamentos de info", "60");
@@ -17,9 +17,10 @@ public class Testando {
         var materia7 = new Materia("Redes de Computadores", "60");
         var materia8 = new Materia("Projeto de Banco", "60");
         var materia9 = new Materia("Estrutura de dados", "60");
+        var materia10 = new Materia("Programacao Orientada a Objetos", "60");
         
         Lista lista = new Lista();
-        lista.adicionarNoFinal(materia0);
+        lista.adicionarNoFinal(materia0); // pilha : push
         lista.adicionarNoFinal(materia1);
         lista.adicionarNoFinal(materia2);
         lista.adicionarNoFinal(materia3);
@@ -29,6 +30,11 @@ public class Testando {
         lista.adicionarNoFinal(materia7);
         lista.adicionarNoFinal(materia8);
         lista.adicionarNoFinal(materia9);
+        
+        lista.removerFinal();  // pilha : pop
+        lista.removerFinal();
+        lista.removerFinal();
+        lista.removerFinal();
         
         
         System.out.println(lista.totalElementos());
