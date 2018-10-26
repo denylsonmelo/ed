@@ -30,14 +30,25 @@ public class Testando {
         lista.adicionarNoFinal(materia7);
         lista.adicionarNoFinal(materia8);
         lista.adicionarNoFinal(materia9);
+        lista.adicionarNoFinal(materia10);
         
-        lista.removerFinal();  // pilha : pop
-        lista.removerFinal();
-        lista.removerFinal();
-        lista.removerFinal();
+        //lista.removerFinal();  // pilha : pop
+        lista.remover(new Materia("Algoritmos 1", "60"));
         
+        System.out.println(materia0);
+        System.out.println(new Materia("Algoritmos 1", "60"));
         
-        System.out.println(lista.totalElementos());
+        System.out.println("Total: " + lista.totalElementos());
         System.out.println(lista.imprimirLista());
     }
 }
+
+
+
+
+
+
+
+
+
+

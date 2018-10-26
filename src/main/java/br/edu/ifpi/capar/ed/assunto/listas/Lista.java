@@ -36,7 +36,7 @@ public class Lista {
         }
     }
 
-    private void criarLista(ElementoLista novoElemento) {
+    private void criarListaDoInicio(ElementoLista novoElemento) {
         this.primeiro = this.ultimo = novoElemento;
     }
 
@@ -48,7 +48,7 @@ public class Lista {
         ElementoLista elementoNovo = new ElementoLista(materiaNova);
 
         if (totalElementos() == 0) {
-            this.criarLista(elementoNovo);
+            this.criarListaDoInicio(elementoNovo);
         } else {
             ElementoLista elementoTemporario = this.primeiro;
             this.primeiro = elementoNovo;
@@ -62,7 +62,7 @@ public class Lista {
         ElementoLista elementoNovo = new ElementoLista(materiaNova);
 
         if (totalElementos() == 0) {
-            this.criarLista(elementoNovo);
+            this.criarListaDoInicio(elementoNovo);
         } else {
             ElementoLista elementoTemporario = this.ultimo;
             this.ultimo = elementoNovo;
@@ -77,42 +77,71 @@ public class Lista {
     }
 
     public void remover(Materia materia) {
-
+        ElementoLista atual = this.primeiro;
+        //laco de repeticao
+        if(materia.equals(atual.getMateria())){
+            System.out.println("e igual");
+        }
     }
 
     public void removerFinal() {
-        ElementoLista elementoTemporarioAnteriorAtual = this.primeiro;
-        ElementoLista elementoTemporarioAtual = this.primeiro.irParaProximo();
-        for (int i = 1; i < totalElementos(); i++) {
-            elementoTemporarioAnteriorAtual = elementoTemporarioAtual;
-            elementoTemporarioAtual = elementoTemporarioAtual.irParaProximo();
+        // necessita de extrema refatoracao
+        switch (totalElementos()) {
+            case 0:
+                System.out.println("lista esta vazia");
+                break;
+            case 1:
+                this.primeiro = this.ultimo = null;
+                this.total--;
+                break;
+            default:
+                ElementoLista elementoTemporarioAnteriorAtual = this.primeiro;
+                ElementoLista elementoTemporarioAtual = this.primeiro.irParaProximo();
+                for (int i = 1; i < totalElementos(); i++) {
+                    elementoTemporarioAnteriorAtual = elementoTemporarioAtual;
+                    elementoTemporarioAtual = elementoTemporarioAtual.irParaProximo();
+                }
+
+                this.ultimo = elementoTemporarioAnteriorAtual;
+                this.ultimo.definirProximo(null);
+                this.total--;
         }
-
-        this.ultimo = elementoTemporarioAnteriorAtual;
-        this.ultimo.definirProximo(null);
-        this.total--;
-
         //this.ultimo = this.ultimo.irParaAnterior();
         //this.ultimo.definirProximo(null);
-        
-        
     }
 
     public void removerInicio() {
-
+        // necessita de extrema refatoracao
+        switch (totalElementos()) {
+            case 0:
+                System.out.println("lista esta vazia");
+                break;
+            case 1:
+                this.primeiro = this.ultimo = null;
+                this.total--;
+                break;
+            default:
+                this.primeiro = this.primeiro.irParaProximo();
+                this.total--;
+                break;
+        }
     }
 
     public String imprimirLista() {
         StringBuilder builder = new StringBuilder("Lista[");
 
-        builder.append(this.primeiro).append(", ");
-        ElementoLista atual = this.primeiro.irParaProximo();
-        for (int i = 1; i < totalElementos(); i++) {
-            builder.append(atual).append(", ");
-            atual = atual.irParaProximo();
+        if (this.primeiro != null) {
+            builder.append(this.primeiro).append(", ");
+            ElementoLista atual = this.primeiro.irParaProximo();
+            for (int i = 1; i < totalElementos(); i++) {
+                builder.append(atual).append(", ");
+                atual = atual.irParaProximo();
+            }
+            builder.append("]");
+            return builder.toString();
         }
-        builder.append("]");
-        return builder.toString();
+
+        return "Lista Vazia !!!";
     }
 
     public void alterar(Materia antiga, Materia nova) {

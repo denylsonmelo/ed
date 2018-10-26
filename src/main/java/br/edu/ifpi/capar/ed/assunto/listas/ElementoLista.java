@@ -9,6 +9,10 @@ public class ElementoLista {
     private final Materia materia;
     private ElementoLista proximo;
 
+    public Materia getMateria(){
+        return this.materia;
+    }
+    
     public ElementoLista irParaProximo() {
         return this.proximo;
     }

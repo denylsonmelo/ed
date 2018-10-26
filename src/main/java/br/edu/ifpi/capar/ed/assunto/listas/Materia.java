@@ -1,5 +1,7 @@
 package br.edu.ifpi.capar.ed.assunto.listas;
 
+import java.util.Objects;
+
 /**
  *
  * @author seijuh
@@ -8,6 +10,33 @@ public class Materia {
 
     private final String nome;
     private final String cargaHoraria;
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Materia other = (Materia) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.cargaHoraria, other.cargaHoraria)) {
+            return false;
+        }
+        return true;
+    }
     
     public String getNome() {
         return nome;
