@@ -73,15 +73,74 @@ public class Lista {
     }
 
     public void remover(int posicao) {
+        if (posicao < 0 || posicao >= totalElementos()) {
+            System.out.println("posicao invalida para a lista");
+        } else if (posicao == 0) {
+            this.removerInicio();
+        } else {
+            ElementoLista elementoTemporarioAnteriorAtual = this.primeiro;
+            ElementoLista elementoTemporarioAtual = this.primeiro.irParaProximo();
 
+            for (int i = 1; i < totalElementos(); i++) {
+                System.out.print("entrei no for ... ");
+                if (posicao == i) {
+
+                    if (posicao == totalElementos() - 1) {
+                        System.out.println("removendo do final");
+                        this.ultimo = elementoTemporarioAnteriorAtual;
+                        this.ultimo.definirProximo(null);
+                    } else {
+                        System.out.println("removendo da posicao " + i);
+                        elementoTemporarioAnteriorAtual.definirProximo(elementoTemporarioAtual.irParaProximo());
+                    }
+
+                    this.total--;
+                    break;
+                } else {
+                    elementoTemporarioAnteriorAtual = elementoTemporarioAtual;
+                    elementoTemporarioAtual = elementoTemporarioAtual.irParaProximo();
+                }
+
+            }
+        }
     }
 
     public void remover(Materia materia) {
-        ElementoLista atual = this.primeiro;
-        //laco de repeticao
-        if(materia.equals(atual.getMateria())){
-            System.out.println("e igual");
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Tentando remover " + materia.getNome());
+        if (this.primeiro != null && this.primeiro.getMateria().equals(materia)) {
+            System.out.println("removendo do inicio");
+            this.removerInicio();
+        } else {
+            ElementoLista elementoTemporarioAnteriorAtual = this.primeiro;
+            ElementoLista elementoTemporarioAtual = this.primeiro.irParaProximo();
+
+            for (int i = 1; i < totalElementos(); i++) {
+                System.out.print("entrei no for ... ");
+                if (elementoTemporarioAtual != null && elementoTemporarioAtual.getMateria().equals(materia)) {
+
+                    if (elementoTemporarioAtual.equals(this.ultimo)) {
+                        System.out.println("removendo do final");
+                        this.ultimo = elementoTemporarioAnteriorAtual;
+                        this.ultimo.definirProximo(null);
+                    } else {
+
+                        System.out.println("removendo da posicao " + i);
+                        elementoTemporarioAnteriorAtual.definirProximo(elementoTemporarioAtual.irParaProximo());
+                    }
+
+                    this.total--;
+                    break;
+                } else {
+                    elementoTemporarioAnteriorAtual = elementoTemporarioAtual;
+                    elementoTemporarioAtual = elementoTemporarioAtual.irParaProximo();
+                }
+
+                System.out.println("nao removendo ... proximo");
+            }
+            System.out.println("saiu do laco de repeticao");
         }
+        System.out.println("-----------------------------------------------------------------------------");
     }
 
     public void removerFinal() {
@@ -145,6 +204,14 @@ public class Lista {
     }
 
     public void alterar(Materia antiga, Materia nova) {
+
+    }
+
+    public void alterar(int posicao, Materia nova) {
+
+    }
+
+    public void pesquisar(int posicao, Materia nova) {
 
     }
 }

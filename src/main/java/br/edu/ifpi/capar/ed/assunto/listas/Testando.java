@@ -33,10 +33,11 @@ public class Testando {
         lista.adicionarNoFinal(materia10);
         
         //lista.removerFinal();  // pilha : pop
-        lista.remover(new Materia("Algoritmos 1", "60"));
-        
-        System.out.println(materia0);
-        System.out.println(new Materia("Algoritmos 1", "60"));
+        lista.remover(5);
+        lista.remover(3);
+        lista.remover(10);
+        lista.remover(9);
+        lista.remover(0);
         
         System.out.println("Total: " + lista.totalElementos());
         System.out.println(lista.imprimirLista());

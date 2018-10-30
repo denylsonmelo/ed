@@ -13,7 +13,9 @@ public class Materia {
 
     @Override
     public int hashCode() {
-        int hash = 3;
+        int hash = 5;
+        hash = 67 * hash + Objects.hashCode(this.nome);
+        hash = 67 * hash + Objects.hashCode(this.cargaHoraria);
         return hash;
     }
 
