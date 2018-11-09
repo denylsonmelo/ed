@@ -22,28 +22,25 @@ public class Testando {
         var materia9 = new Materia("Estrutura de dados", "60");
         var materia10 = new Materia("Programacao Orientada a Objetos", "60");
         
-        Lista lista = new Lista();
-        lista.adicionarNoFinal(materia0); // pilha : push
-        lista.adicionarNoFinal(materia1);
-        lista.adicionarNoFinal(materia2);
-        lista.adicionarNoFinal(materia3);
-        lista.adicionarNoFinal(materia4);
-        lista.adicionarNoFinal(materia5);
-        lista.adicionarNoFinal(materia6);
-        lista.adicionarNoFinal(materia7);
-        lista.adicionarNoFinal(materia8);
-        lista.adicionarNoFinal(materia9);
-        lista.adicionarNoFinal(materia10);
         
+//        lista.adicionarNoFinal(materia0); // pilha : push
+//        lista.adicionarNoFinal(materia1);
+//        lista.adicionarNoFinal(materia2);
+//        lista.adicionarNoFinal(materia3);
+//        lista.adicionarNoFinal(materia4);
+//        lista.adicionarNoFinal(materia5);
+//        lista.adicionarNoFinal(materia6);
+//        lista.adicionarNoFinal(materia7);
+//        lista.adicionarNoFinal(materia8);
+//        lista.adicionarNoFinal(materia9);
+//        lista.adicionarNoFinal(materia10);
+//        
         //lista.removerFinal();  // pilha : pop
 
-
         
-        
-        lista.alterar( new Materia("raci", "45"), new Materia("Projeto Supervisionado", "90"));
-        
+        Lista lista = GeradorLista.gerar(300000000);
         System.out.println("Total: " + lista.totalElementos());
-        System.out.println(lista.imprimirLista());
+//        System.out.println(lista.imprimirLista());
         
         
 //        lista.removerFinal();

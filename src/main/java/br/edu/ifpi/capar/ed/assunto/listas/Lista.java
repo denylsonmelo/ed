@@ -217,7 +217,10 @@ public class Lista {
     }
 
     public Materia pesquisar(int posicao) {
-        return this.pesquisarElemento(posicao).getMateria();
+        ElementoLista elemento = this.pesquisarElemento(posicao);
+        if(elemento != null)
+            return elemento.getMateria();
+        return null;
     }
 
     private ElementoLista pesquisarElemento(int posicao) {
@@ -259,7 +262,10 @@ public class Lista {
     }
 
     public Materia pesquisarPrimeiraOcorrencia(String nome) {
-        return this.pesquisarPrimeiraOcorrenciaElemento(nome).getMateria();
+        ElementoLista elemento = this.pesquisarPrimeiraOcorrenciaElemento(nome);
+        if(elemento != null)
+            return elemento.getMateria();
+        return null;
     }
 
     public Materia pesquisarUltimaOcorrencia(String nome) {
