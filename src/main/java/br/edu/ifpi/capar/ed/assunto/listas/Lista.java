@@ -1,5 +1,8 @@
 package br.edu.ifpi.capar.ed.assunto.listas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author seijuh
@@ -211,7 +214,75 @@ public class Lista {
 
     }
 
-    public void pesquisar(int posicao, Materia nova) {
+    public Materia pesquisar(int posicao) {
 
+        if (posicao >= totalElementos() || posicao < 0) {
+            throw new IllegalArgumentException("parametro <<posicao>> esta fora dos valores basicos da lista");
+        }
+
+        if (posicao == 0) {
+            return this.primeiro.getMateria();
+        } else if (posicao == totalElementos() - 1) {
+            return this.ultimo.getMateria();
+        } else {
+            ElementoLista temporaria = this.primeiro.irParaProximo(); //posicao 1
+            for (int i = 1; i < totalElementos() - 1; i++) { // i 1
+                if (posicao == i) { // 5 == 5
+                    return temporaria.getMateria();
+                }//else
+                temporaria = temporaria.irParaProximo();
+            }
+        }
+        return null;
+    }
+
+    public Materia pesquisarPrimeiraOcorrencia(String nome) {
+        if (totalElementos() == 0) {
+            throw new IllegalArgumentException("Lista esta vazia, nao e possivel realizar uma pesquisa");
+        }
+        Materia materiaPesquisada = null;
+        ElementoLista temporaria = this.primeiro;
+        for (int i = 0; i < totalElementos(); i++) {
+            if (temporaria.getMateria().getNome().toLowerCase().contains(nome.toLowerCase())) {
+                materiaPesquisada = temporaria.getMateria();
+                break;
+            }
+            temporaria = temporaria.irParaProximo();
+        }
+        return materiaPesquisada;
+    }
+
+    public Materia pesquisarUltimaOcorrencia(String nome) {
+        if (totalElementos() == 0) {
+            throw new IllegalArgumentException("Lista esta vazia, nao e possivel realizar uma pesquisa");
+        }
+        Materia materiaPesquisada = null;
+        ElementoLista temporaria = this.primeiro;
+        for (int i = 0; i < totalElementos(); i++) {
+            if (temporaria.getMateria().getNome().toLowerCase().contains(nome.toLowerCase())) {
+                materiaPesquisada = temporaria.getMateria();
+            }
+            temporaria = temporaria.irParaProximo();
+        }
+        return materiaPesquisada;
+    }
+
+    public List<Materia> pesquisarTodasOcorrencias(String nome) {
+        if (totalElementos() == 0) {
+            throw new IllegalArgumentException("Lista esta vazia, nao e possivel realizar uma pesquisa");
+
+        }
+
+        List<Materia> materiasPesquisadas = new ArrayList<>();
+        ElementoLista temporaria = this.primeiro;
+
+        for (int i = 0; i < totalElementos(); i++) {
+            if (temporaria.getMateria().getNome().toLowerCase().contains(nome.toLowerCase())) {
+                materiasPesquisadas.add(temporaria.getMateria());
+            }
+            temporaria = temporaria.irParaProximo();
+        }
+
+        return materiasPesquisadas;
     }
 }

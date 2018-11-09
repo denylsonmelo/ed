@@ -12,6 +12,11 @@ public class Materia {
     private final String cargaHoraria;
 
     @Override
+    public String toString() {
+        return "Materia{" + "nome=" + nome + ", cargaHoraria=" + cargaHoraria + '}';
+    }
+
+    @Override
     public int hashCode() {
         int hash = 5;
         hash = 67 * hash + Objects.hashCode(this.nome);

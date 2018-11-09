@@ -1,5 +1,8 @@
 package br.edu.ifpi.capar.ed.assunto.listas;
 
+import static java.lang.System.out;
+import java.util.List;
+
 /**
  *
  * @author seijuh
@@ -33,14 +36,18 @@ public class Testando {
         lista.adicionarNoFinal(materia10);
         
         //lista.removerFinal();  // pilha : pop
-        lista.remover(5);
-        lista.remover(3);
-        lista.remover(10);
-        lista.remover(9);
-        lista.remover(0);
+
+
         
         System.out.println("Total: " + lista.totalElementos());
-        System.out.println(lista.imprimirLista());
+        
+        List variavel = lista.pesquisarTodasOcorrencias("a");
+        
+        System.out.println(variavel.size());
+        System.out.println(variavel);
+//        lista.removerFinal();
+//        System.out.println("Total: " + lista.totalElementos());
+//        System.out.println(lista.pesquisar("tos"));
     }
 }
 
