@@ -207,28 +207,34 @@ public class Lista {
     }
 
     public void alterar(Materia antiga, Materia nova) {
-
+        ElementoLista elemento = this.pesquisarPrimeiraOcorrenciaElemento(antiga.getNome());
+        elemento.setMateria(nova);
     }
 
     public void alterar(int posicao, Materia nova) {
-
+        ElementoLista elemento = pesquisarElemento(posicao);
+        elemento.setMateria(nova);
     }
 
     public Materia pesquisar(int posicao) {
+        return this.pesquisarElemento(posicao).getMateria();
+    }
+
+    private ElementoLista pesquisarElemento(int posicao) {
 
         if (posicao >= totalElementos() || posicao < 0) {
             throw new IllegalArgumentException("parametro <<posicao>> esta fora dos valores basicos da lista");
         }
 
         if (posicao == 0) {
-            return this.primeiro.getMateria();
+            return this.primeiro;
         } else if (posicao == totalElementos() - 1) {
-            return this.ultimo.getMateria();
+            return this.ultimo;
         } else {
             ElementoLista temporaria = this.primeiro.irParaProximo(); //posicao 1
             for (int i = 1; i < totalElementos() - 1; i++) { // i 1
                 if (posicao == i) { // 5 == 5
-                    return temporaria.getMateria();
+                    return temporaria;
                 }//else
                 temporaria = temporaria.irParaProximo();
             }
@@ -236,20 +242,24 @@ public class Lista {
         return null;
     }
 
-    public Materia pesquisarPrimeiraOcorrencia(String nome) {
+    private ElementoLista pesquisarPrimeiraOcorrenciaElemento(String nome) {
         if (totalElementos() == 0) {
             throw new IllegalArgumentException("Lista esta vazia, nao e possivel realizar uma pesquisa");
         }
-        Materia materiaPesquisada = null;
+        ElementoLista elementoPesquisado = null;
         ElementoLista temporaria = this.primeiro;
         for (int i = 0; i < totalElementos(); i++) {
             if (temporaria.getMateria().getNome().toLowerCase().contains(nome.toLowerCase())) {
-                materiaPesquisada = temporaria.getMateria();
+                elementoPesquisado = temporaria;
                 break;
             }
             temporaria = temporaria.irParaProximo();
         }
-        return materiaPesquisada;
+        return elementoPesquisado;
+    }
+
+    public Materia pesquisarPrimeiraOcorrencia(String nome) {
+        return this.pesquisarPrimeiraOcorrenciaElemento(nome).getMateria();
     }
 
     public Materia pesquisarUltimaOcorrencia(String nome) {

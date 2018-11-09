@@ -6,8 +6,12 @@ package br.edu.ifpi.capar.ed.assunto.listas;
  */
 public class ElementoLista {
 
-    private final Materia materia;
+    private Materia materia;
     private ElementoLista proximo;
+
+    public void setMateria(Materia materia) {
+        this.materia = materia;
+    }
 
     public Materia getMateria(){
         return this.materia;

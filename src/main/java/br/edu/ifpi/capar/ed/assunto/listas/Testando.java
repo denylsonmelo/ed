@@ -39,12 +39,13 @@ public class Testando {
 
 
         
+        
+        lista.alterar( new Materia("raci", "45"), new Materia("Projeto Supervisionado", "90"));
+        
         System.out.println("Total: " + lista.totalElementos());
+        System.out.println(lista.imprimirLista());
         
-        List variavel = lista.pesquisarTodasOcorrencias("a");
         
-        System.out.println(variavel.size());
-        System.out.println(variavel);
 //        lista.removerFinal();
 //        System.out.println("Total: " + lista.totalElementos());
 //        System.out.println(lista.pesquisar("tos"));
