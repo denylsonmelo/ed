@@ -35,11 +35,15 @@ public class GeradorLista {
     );
     
     public static Lista gerar(int total){
-        
+        System.out.println("   >>>    iniciando geracao de lista");
+        long inicio = System.currentTimeMillis();
         Lista lista = new Lista();
         for (int i = 1; i <= total; i++) {
+            System.out.print(" - " + i + " ->  ");
             lista.adicionarNoFinal(gerarMateria());
         }
+        long fim = System.currentTimeMillis();
+        System.out.println("   >>>    terminando geracao de lista. >> " + (fim-inicio) + " milisegundos");
         return lista;
     }
     

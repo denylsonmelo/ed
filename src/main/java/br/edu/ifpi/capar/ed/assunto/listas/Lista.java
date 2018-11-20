@@ -284,6 +284,9 @@ public class Lista {
     }
 
     public List<Materia> pesquisarTodasOcorrencias(String nome) {
+        System.out.println("  >>>  iniciando a pesquisa");
+        long inicio = System.currentTimeMillis();
+        
         if (totalElementos() == 0) {
             throw new IllegalArgumentException("Lista esta vazia, nao e possivel realizar uma pesquisa");
 
@@ -299,6 +302,32 @@ public class Lista {
             temporaria = temporaria.irParaProximo();
         }
 
+        long fim = System.currentTimeMillis();
+        System.out.println("  >>>  terminando a pesquisa. >> " + (fim - inicio) + " milisegundos");
+        return materiasPesquisadas;
+    }
+    
+    public List<Materia> pesquisarTodasOcorrencias(Materia materiaASerPesquisada) {
+        System.out.println("  >>>  iniciando a pesquisa");
+        long inicio = System.currentTimeMillis();
+        
+        if (totalElementos() == 0) {
+            throw new IllegalArgumentException("Lista esta vazia, nao e possivel realizar uma pesquisa");
+
+        }
+
+        List<Materia> materiasPesquisadas = new ArrayList<>();
+        ElementoLista temporaria = this.primeiro;
+
+        for (int i = 0; i < totalElementos(); i++) {
+            if (temporaria.getMateria().equals(materiaASerPesquisada)) {
+                materiasPesquisadas.add(temporaria.getMateria());
+            }
+            temporaria = temporaria.irParaProximo();
+        }
+
+        long fim = System.currentTimeMillis();
+        System.out.println("  >>>  terminando a pesquisa. >> " + (fim - inicio) + " milisegundos");
         return materiasPesquisadas;
     }
 }

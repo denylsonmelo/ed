@@ -38,8 +38,12 @@ public class Testando {
         //lista.removerFinal();  // pilha : pop
 
         
-        Lista lista = GeradorLista.gerar(300000000);
+        Lista lista = GeradorLista.gerar(3_000_000);
         System.out.println("Total: " + lista.totalElementos());
+        
+        System.in.read();
+        
+        System.out.println(lista.pesquisarTodasOcorrencias(new Materia("analise diferencial 10", "60")));
 //        System.out.println(lista.imprimirLista());
         
         
