@@ -153,5 +153,5 @@ Sinta-se livre para sugerir melhorias, materiais e outras contribuições via Is
 
 [Algoritmos e Estruturas de Dados com Java]: https://www.caelum.com.br/apostila-java-estrutura-dados/
 [Java Básico]: https://loiane.training/course/java-basico/
-[Java Intermediário]: https://loiane.training/course/java-basico-ii/
-[Estrutura de Dados e Algoritmos com Java]: https://loiane.training/course/estrutura-de-dados-e-algoritmos-com-java/
+[Java Intermediário]: https://loiane.training/curso/java-intermediario
+[Estrutura de Dados e Algoritmos com Java]: https://loiane.training/curso/estrutura-de-dados
