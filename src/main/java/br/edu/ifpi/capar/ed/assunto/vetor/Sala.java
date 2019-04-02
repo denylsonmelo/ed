@@ -22,9 +22,15 @@ public class Sala {
         jamile.idade = 19;
         jamile.materia = "ingles";
         
+        Aluno fatima = new Aluno();
+        fatima.nome = "fatima";
+        fatima.idade = 19;
+        fatima.materia = "ingles";
+        
         
         vetor.adicionar(manoel);
         vetor.adicionar(jamile);
+        vetor.adicionar(fatima);
         
         
         System.out.println(vetor);

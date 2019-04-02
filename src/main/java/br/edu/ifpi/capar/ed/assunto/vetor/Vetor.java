@@ -20,14 +20,18 @@ public class Vetor {
         this.quantidadeAlunosCadastrados++;
     }
 
+    @Override
     public String toString() {
-        String vetor = new String("");
-        
-        for (int i = 0; i < this.quantidadeAlunosCadastrados; i++) {
-            vetor = vetor + " , " + this.alunos[i].nome;
+        String vetor = new String("Vetor [");
+
+        for (int i = 0; i < (this.tamanho() - 1); i++) {
+            vetor = vetor + this.alunos[i].nome + ", ";
         }
-        
-        
+
+        if (this.tamanho() > 0) {
+            vetor = vetor + this.alunos[this.tamanho() - 1].nome;
+        }
+        vetor = vetor + "]";
         return vetor;
     }
 }
