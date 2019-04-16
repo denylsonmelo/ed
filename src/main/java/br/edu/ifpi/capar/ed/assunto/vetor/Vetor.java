@@ -1,7 +1,5 @@
 package br.edu.ifpi.capar.ed.assunto.vetor;
 
-import java.util.Arrays;
-
 /**
  *
  * @author seijuh
@@ -11,26 +9,24 @@ public class Vetor {
     private Aluno[] alunos = new Aluno[40];
     private int quantidadeAlunosCadastrados = 0;
 
+    public void remover(int posicao) {
+        // implementação
+    }
+
     public boolean contem(Aluno aluno) {
 
-        for (int i = 0; i < tamanho(); i++) { 
+        for (int i = 0; i < tamanho(); i++) {
             System.out.println("posicao do i: " + i + ", aluno: " + this.alunos[i].nome);
-            if(aluno.equals(this.alunos[i]))
+            if (aluno.equals(this.alunos[i])) {
                 return true;
+            }
         }
-        
+
         return false;
     }
 
     public Aluno pegar(int posicao) {
-
-        if (posicao < 0) {
-            throw new IllegalArgumentException("Espero que a posicao seja maior que zero");
-        }
-        if (posicao > tamanho()) {
-            throw new IllegalArgumentException("nao existe elementos nessa posicao");
-        }
-
+        this.verificarSeEhValidaA(posicao);
         return this.alunos[posicao];
     }
 
@@ -38,16 +34,46 @@ public class Vetor {
         return this.quantidadeAlunosCadastrados;
     }
 
-    public void adicionar(Aluno aluno) {
+    private void verificarSePrecisarAumentarVetor() {
         if (this.quantidadeAlunosCadastrados == this.alunos.length) {
-
             Aluno[] auxiliar = new Aluno[this.alunos.length * 2];
             for (int i = 0; i < tamanho(); i++) {
                 auxiliar[i] = this.alunos[i];
             }
             this.alunos = auxiliar;
-
         }
+    }
+
+    private void verificarSeEhValidaA(int posicao) {
+        if (posicao < 0) {
+            throw new IllegalArgumentException("Espero que a posicao seja maior que zero");
+        }
+        if (posicao > tamanho()) {
+            throw new IllegalArgumentException("nao existe elementos nessa posicao");
+        }
+    }
+
+    public void adicionar(int posicao, Aluno aluno) {
+        this.verificarSeEhValidaA(posicao);
+        this.verificarSePrecisarAumentarVetor();
+
+        if (posicao == tamanho()) {
+            adicionar(aluno);
+        }
+        if (posicao < tamanho()) {
+            for (int i = tamanho(); i > posicao; i--) {
+
+                this.alunos[i] = this.alunos[i-1];
+
+            }
+            this.alunos[posicao] = aluno;
+            this.quantidadeAlunosCadastrados++;
+        }
+
+    }
+
+    public void adicionar(Aluno aluno) {
+        this.verificarSePrecisarAumentarVetor();
         this.alunos[quantidadeAlunosCadastrados] = aluno;
         this.quantidadeAlunosCadastrados++;
     }

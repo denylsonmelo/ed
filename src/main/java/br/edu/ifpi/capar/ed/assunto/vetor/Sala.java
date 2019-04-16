@@ -32,31 +32,15 @@ public class Sala {
         vetor.adicionar(jamile);
         vetor.adicionar(fatima);
 
-        scanner.next();
-        long inicio = System.currentTimeMillis();
-        System.out.println("adicionando");
-        for (int i = 0; i < 3_000_000; i++) {
-            fatima = new Aluno();
-            fatima.nome = "nome de aluno -> " + i;
-            vetor.adicionar(fatima);
-        }
-        long fim = System.currentTimeMillis();
-
-        System.out.println("diferenca no adicionar: " + (fim - inicio) / 1000.0000000000);
-
-        //System.out.println(vetor);
-        Aluno alunoASerPesquisado = new Aluno();
-        alunoASerPesquisado.nome = "vitin";
-
-        scanner.next();
-        inicio = System.currentTimeMillis();
-        System.out.println(">>>  Aluno " + alunoASerPesquisado.nome + " estah no vetor: "
-                + vetor.contem(alunoASerPesquisado));
-        fim = System.currentTimeMillis();
-        System.out.println("diferenca no pesquisar: " + (fim - inicio) / 1000.0000000000);
-
-        //System.out.println(vetor.pegar(55));
-        System.out.println("Quantidade de alunos no array: " + vetor.tamanho());
-
+        Aluno cleu = new Aluno();
+        cleu.nome = "cleu";
+        Aluno alaine = new Aluno();
+        alaine.nome = "alaine";
+        
+        
+        vetor.adicionar(2 , cleu);
+        vetor.adicionar(1, alaine);
+        
+        System.out.println(vetor);
     }
 }
