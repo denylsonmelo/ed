@@ -1,5 +1,7 @@
 package br.edu.ifpi.capar.ed.assunto.vetor;
 
+import br.edu.ifpi.capar.ed.assunto.Aluno;
+
 /**
  *
  * @author seijuh

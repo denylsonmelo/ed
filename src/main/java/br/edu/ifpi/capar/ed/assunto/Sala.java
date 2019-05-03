@@ -1,5 +1,7 @@
-package br.edu.ifpi.capar.ed.assunto.vetor;
+package br.edu.ifpi.capar.ed.assunto;
 
+import br.edu.ifpi.capar.ed.assunto.Aluno;
+import br.edu.ifpi.capar.ed.assunto.vetor.Vetor;
 import java.util.Scanner;
 
 /**
