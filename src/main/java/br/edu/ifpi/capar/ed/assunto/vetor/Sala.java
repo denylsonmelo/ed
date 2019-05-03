@@ -41,6 +41,12 @@ public class Sala {
         vetor.adicionar(2 , cleu);
         vetor.adicionar(1, alaine);
         
+        
+        vetor.remover(3);
+        vetor.remover(3);
+        vetor.remover(3);
+        //vetor.remover(3);
+        
         System.out.println(vetor);
     }
 }

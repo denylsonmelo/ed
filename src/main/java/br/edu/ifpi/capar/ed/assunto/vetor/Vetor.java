@@ -10,7 +10,16 @@ public class Vetor {
     private int quantidadeAlunosCadastrados = 0;
 
     public void remover(int posicao) {
-        // implementação
+        this.verificarSeEhValidaA(posicao);
+        boolean apagouAlgumaCoisa = false;
+        
+        for (int i = posicao; i < tamanho(); i++) {
+            this.alunos[i] = this.alunos[i + 1];
+            apagouAlgumaCoisa = true;
+        }
+        
+        if(apagouAlgumaCoisa)
+            this.quantidadeAlunosCadastrados--;
     }
 
     public boolean contem(Aluno aluno) {
