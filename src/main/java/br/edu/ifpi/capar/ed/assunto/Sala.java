@@ -1,7 +1,6 @@
 package br.edu.ifpi.capar.ed.assunto;
 
-import br.edu.ifpi.capar.ed.assunto.Aluno;
-import br.edu.ifpi.capar.ed.assunto.vetor.Vetor;
+import br.edu.ifpi.capar.ed.assunto.lista.Lista;
 import java.util.Scanner;
 
 /**
@@ -12,7 +11,7 @@ public class Sala {
 
     public static void main(String[] args) {
 
-        Vetor vetor = new Vetor();
+        Lista lista = new Lista();
         Scanner scanner = new Scanner(System.in);
 
         Aluno manoel = new Aluno();
@@ -30,25 +29,10 @@ public class Sala {
         fatima.idade = 19;
         fatima.materia = "ingles";
 
-        vetor.adicionar(manoel);
-        vetor.adicionar(jamile);
-        vetor.adicionar(fatima);
+        lista.adicionar(fatima);
+        lista.adicionar(jamile);
+        lista.adicionar(manoel);
 
-        Aluno cleu = new Aluno();
-        cleu.nome = "cleu";
-        Aluno alaine = new Aluno();
-        alaine.nome = "alaine";
-        
-        
-        vetor.adicionar(2 , cleu);
-        vetor.adicionar(1, alaine);
-        
-        
-        vetor.remover(3);
-        vetor.remover(3);
-        vetor.remover(3);
-        //vetor.remover(3);
-        
-        System.out.println(vetor);
+        System.out.println(lista);
     }
 }
