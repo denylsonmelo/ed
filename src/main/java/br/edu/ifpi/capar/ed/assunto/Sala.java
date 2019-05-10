@@ -32,7 +32,17 @@ public class Sala {
         lista.adicionar(fatima);
         lista.adicionar(jamile);
         lista.adicionar(manoel);
+        
+        Aluno alunoGenerico;
+        for (int i = 0; i < 10_000_000; i++) {
+            alunoGenerico = new Aluno();
+            alunoGenerico.nome = "algo " + i;
+            lista.adicionar(alunoGenerico);
+        }
+        
 
         System.out.println(lista);
+        
+        System.out.println(lista.contem("evaldo"));
     }
 }
