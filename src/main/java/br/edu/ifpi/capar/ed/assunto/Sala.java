@@ -33,32 +33,11 @@ public class Sala {
         lista.adicionar(jamile);
         lista.adicionar(manoel);
         
-        scanner.next();
-        long inicio = System.currentTimeMillis();
-        System.out.print("adicionando ");
+        System.out.println(lista);
         
-        Aluno alunoGenerico;
-        for (int i = 0; i < 35_000_000; i++) {
-            alunoGenerico = new Aluno();
-            alunoGenerico.nome = "algo " + i;
-            lista.adicionar(alunoGenerico);
-            //if((i % 50_000) == 0){
-            //    System.out.print(".");
-            //}
-        }
+        lista.remover(1);
+        //lista.remover(1);
         
-        long fim = System.currentTimeMillis();
-        System.out.println("\n");
-        System.out.println("tempo de adicao: " + (fim - inicio));
-        //System.out.println(lista);
-        
-        
-        scanner.next();
-        inicio = System.currentTimeMillis();
-        System.out.print("buscando\n");
-        System.out.println(lista.contem("evaldo"));
-        fim = System.currentTimeMillis();
-        System.out.println("\n");
-        System.out.println("tempo de busca: " + (fim - inicio));
+        System.out.println(lista);
     }
 }

@@ -12,6 +12,36 @@ public class Lista {
     private ElementoLista fim;
     private int quantidadeAlunosCadastrados = 0;
 
+    public void remover(int posicao) {
+        this.verificarSeEhValidaA(posicao);
+
+        if (posicao == 0) {
+
+            ElementoLista elemento = this.inicio.getProximo();
+            this.inicio.setProximo(null);
+            this.inicio = elemento;
+
+            this.quantidadeAlunosCadastrados--;
+            return;
+        }
+
+        ElementoLista elemento = this.inicio.getProximo();
+        ElementoLista anterior = elemento;
+        for (int i = 1; i < tamanho(); i++) {
+            if (posicao == i) {
+
+                anterior.setProximo(elemento.getProximo());
+                elemento.setProximo(null);
+                this.quantidadeAlunosCadastrados--;
+                return;
+            }
+
+            anterior = elemento;
+            elemento = elemento.getProximo();
+        }
+
+    }
+
     private void verificarSeEhValidaA(int posicao) {
         if (posicao < 0) {
             throw new IllegalArgumentException("Espero que a posicao seja maior que zero");
@@ -21,41 +51,39 @@ public class Lista {
         }
     }
 
-    public boolean contem(Aluno aluno){
+    public boolean contem(Aluno aluno) {
         ElementoLista elemento = inicio;
         for (int i = 0; i < tamanho(); i++) {
-            if(elemento.getAluno().equals(aluno)){
+            if (elemento.getAluno().equals(aluno)) {
                 return true;
-            }else{
+            } else {
                 elemento = elemento.getProximo();
             }
         }
 
         return false;
     }
-    
-    public boolean contem(String nome){
+
+    public boolean contem(String nome) {
         ElementoLista elemento = inicio;
         for (int i = 0; i < tamanho(); i++) {
-            if(elemento.getAluno().nome.equals(nome)){
+            if (elemento.getAluno().nome.equals(nome)) {
                 return true;
-            }else{
+            } else {
                 elemento = elemento.getProximo();
             }
         }
 
         return false;
     }
-    
-    
+
     public Aluno pegar(int posicao) {
         this.verificarSeEhValidaA(posicao);
 
-        
         Aluno aluno = null;
         ElementoLista elemento = inicio;
         for (int i = 0; i < tamanho(); i++) {
-            if(i == posicao){
+            if (i == posicao) {
                 aluno = elemento.getAluno();
                 break;
             }
@@ -73,6 +101,7 @@ public class Lista {
         if (inicio == null && fim == null) {
             inicio = novoElemento;
         } else {
+            //
             fim.setProximo(novoElemento);
         }
         fim = novoElemento;
