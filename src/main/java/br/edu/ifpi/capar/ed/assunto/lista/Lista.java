@@ -25,8 +25,8 @@ public class Lista {
             return;
         }
 
-        ElementoLista elemento = this.inicio.getProximo();
-        ElementoLista anterior = elemento;
+        ElementoLista elemento = this.inicio.getProximo(); //segundo da lista
+        ElementoLista anterior = this.inicio; // primeiro da lista
         for (int i = 1; i < tamanho(); i++) {
             if (posicao == i) {
 
@@ -101,7 +101,6 @@ public class Lista {
         if (inicio == null && fim == null) {
             inicio = novoElemento;
         } else {
-            //
             fim.setProximo(novoElemento);
         }
         fim = novoElemento;

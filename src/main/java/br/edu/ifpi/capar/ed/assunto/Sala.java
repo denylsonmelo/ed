@@ -33,10 +33,19 @@ public class Sala {
         lista.adicionar(jamile);
         lista.adicionar(manoel);
         
+        Aluno alaine = new Aluno();
+        Aluno vitin = new Aluno();
+        alaine.nome = "alaine";
+        vitin.nome = "vitin";
+        
+        lista.adicionar(alaine);
+        lista.adicionar(vitin);
+        
         System.out.println(lista);
         
         lista.remover(1);
-        //lista.remover(1);
+        lista.remover(3);
+        lista.remover(1);
         
         System.out.println(lista);
     }
