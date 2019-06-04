@@ -1,6 +1,7 @@
 package br.edu.ifpi.capar.ed.assunto;
 
 import br.edu.ifpi.capar.ed.assunto.lista.Lista;
+import br.edu.ifpi.capar.ed.assunto.pilha.Pilha;
 import java.util.Scanner;
 
 /**
@@ -9,9 +10,15 @@ import java.util.Scanner;
  */
 public class Sala {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        Lista lista = new Lista();
+        Pilha pilha = new Pilha();
+        
+        
+        //  pai --> filho : erro
+        // filho --> pai : funciona, metodo do filho, o cara do new
+        
+        
         Scanner scanner = new Scanner(System.in);
 
         Aluno manoel = new Aluno();
@@ -29,24 +36,20 @@ public class Sala {
         fatima.idade = 19;
         fatima.materia = "ingles";
 
-        lista.adicionar(fatima);
-        lista.adicionar(jamile);
-        lista.adicionar(manoel);
         
-        Aluno alaine = new Aluno();
-        Aluno vitin = new Aluno();
-        alaine.nome = "alaine";
-        vitin.nome = "vitin";
+        pilha.push(fatima);
+        pilha.push(jamile);
+        pilha.push(manoel);
+        Aluno alunoRecuperado = pilha.pop();
         
-        lista.adicionar(alaine);
-        lista.adicionar(vitin);
         
-        System.out.println(lista);
+        //System.out.println(nomeDaVariavel.estahVazia());
         
-        lista.remover(1);
-        lista.remover(3);
-        lista.remover(1);
+        System.out.println(pilha);
+        System.out.println("-----------------");
+        System.out.println(alunoRecuperado.nome);
+        alunoRecuperado = pilha.pop();
+        System.out.println(alunoRecuperado.nome);
         
-        System.out.println(lista);
     }
 }

@@ -8,9 +8,9 @@ import br.edu.ifpi.capar.ed.assunto.Aluno;
  */
 public class Lista {
 
-    private ElementoLista inicio;
-    private ElementoLista fim;
-    private int quantidadeAlunosCadastrados = 0;
+    protected ElementoLista inicio;
+    protected ElementoLista fim;
+    protected int quantidadeAlunosCadastrados = 0;
 
     public void remover(int posicao) {
         this.verificarSeEhValidaA(posicao);
