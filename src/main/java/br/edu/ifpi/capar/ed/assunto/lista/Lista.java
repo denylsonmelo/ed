@@ -114,9 +114,17 @@ public class Lista {
 
     @Override
     public String toString() {
-        String impressao = "Lista{\n\t" + "quantidade=" + tamanho() + ",";
+        return this.imprimir(this.nomeClasse());
+    }
 
-        ElementoLista iterando = inicio;
+    protected String nomeClasse(){
+        return this.getClass().getSimpleName();
+    }
+    
+    protected String imprimir(String tipo){
+        String impressao = tipo+ " {\n\t" + "quantidade=" + tamanho() + ",";
+
+        ElementoLista iterando = this.inicio;
         for (int i = 0; i < tamanho(); i++) {
             impressao = impressao + "\n\t" + "aluno: " + iterando.getAluno().nome + ",";
             iterando = iterando.getProximo();
@@ -124,5 +132,4 @@ public class Lista {
 
         return impressao + "\n}";
     }
-
 }

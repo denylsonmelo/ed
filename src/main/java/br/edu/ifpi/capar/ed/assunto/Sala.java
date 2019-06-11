@@ -1,5 +1,6 @@
 package br.edu.ifpi.capar.ed.assunto;
 
+import br.edu.ifpi.capar.ed.assunto.fila.Fila;
 import br.edu.ifpi.capar.ed.assunto.lista.Lista;
 import br.edu.ifpi.capar.ed.assunto.pilha.Pilha;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Sala {
 
     public static void main(String[] args) throws Exception {
 
-        Pilha pilha = new Pilha();
+        Fila fila = new Fila();
         
         
         //  pai --> filho : erro
@@ -36,20 +37,7 @@ public class Sala {
         fatima.idade = 19;
         fatima.materia = "ingles";
 
-        
-        pilha.push(fatima);
-        pilha.push(jamile);
-        pilha.push(manoel);
-        Aluno alunoRecuperado = pilha.pop();
-        
-        
-        //System.out.println(nomeDaVariavel.estahVazia());
-        
-        System.out.println(pilha);
-        System.out.println("-----------------");
-        System.out.println(alunoRecuperado.nome);
-        alunoRecuperado = pilha.pop();
-        System.out.println(alunoRecuperado.nome);
+        System.out.println(fila);
         
     }
 }

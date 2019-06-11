@@ -71,17 +71,4 @@ public class Pilha extends Lista {
         return false;
     }
 
-    @Override
-    public String toString() {
-        String impressao = "Pilha{\n\t" + "quantidade=" + tamanho() + ",";
-
-        ElementoLista iterando = this.inicio;
-        for (int i = 0; i < tamanho(); i++) {
-            impressao = impressao + "\n\t" + "aluno: " + iterando.getAluno().nome + ",";
-            iterando = iterando.getProximo();
-        }
-
-        return impressao + "\n}";
-    }
-
 }
