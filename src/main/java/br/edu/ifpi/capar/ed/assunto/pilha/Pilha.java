@@ -11,17 +11,20 @@ import br.edu.ifpi.capar.ed.assunto.lista.Lista;
 public class Pilha extends Lista {
 
     //TODO bloquear os outros metodos
-    
+    public void push(Aluno aluno) {
+        super.adicionar(aluno);
+    }
+
     public Aluno pop() throws Exception {
         Aluno ultimoAluno = null;
-        
+
         if (estahVazia()) {
             throw new Exception("nao ha elementos");
         }
         if (this.tamanho() == 1) {
 
             ultimoAluno = this.inicio.getAluno();
-            
+
             this.inicio = this.fim = null;
             this.quantidadeAlunosCadastrados--;
 
@@ -34,9 +37,9 @@ public class Pilha extends Lista {
                     fim = anterior;
                     anterior.setProximo(null);
                     this.quantidadeAlunosCadastrados--;
-                    
+
                     ultimoAluno = elemento.getAluno();
-                    
+
                     elemento = null; // opcional por conta do gc
                     break;
                 }
@@ -49,26 +52,14 @@ public class Pilha extends Lista {
     }
 
     @Override
-    public void remover(int posicao) {
+    public Aluno remover(int posicao) {
         System.out.println("por favor chame o metodo pop()");
+        return null;
     }
 
     @Override
     public void adicionar(Aluno aluno) {
         System.out.println("por favor, para adicionar o {aluno= " + aluno.nome + "} chame o metodo push()");
-    }
-
-    public void push(Aluno aluno) {
-        super.adicionar(aluno);
-    }
-
-    public boolean estahVazia() {
-
-        if (this.tamanho() == 0) {
-            return true;
-        }
-
-        return false;
     }
 
 }

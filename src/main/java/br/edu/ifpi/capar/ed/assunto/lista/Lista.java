@@ -12,34 +12,36 @@ public class Lista {
     protected ElementoLista fim;
     protected int quantidadeAlunosCadastrados = 0;
 
-    public void remover(int posicao) {
+    public Aluno remover(int posicao) {
         this.verificarSeEhValidaA(posicao);
+        Aluno alunoParaRetornar = null;
 
         if (posicao == 0) {
 
             ElementoLista elemento = this.inicio.getProximo();
             this.inicio.setProximo(null);
+            alunoParaRetornar = this.inicio.getAluno();
             this.inicio = elemento;
 
             this.quantidadeAlunosCadastrados--;
-            return;
+            return alunoParaRetornar;
         }
 
         ElementoLista elemento = this.inicio.getProximo(); //segundo da lista
         ElementoLista anterior = this.inicio; // primeiro da lista
         for (int i = 1; i < tamanho(); i++) {
             if (posicao == i) {
-
+                alunoParaRetornar = elemento.getAluno();
                 anterior.setProximo(elemento.getProximo());
                 elemento.setProximo(null);
                 this.quantidadeAlunosCadastrados--;
-                return;
+                return alunoParaRetornar;
             }
 
             anterior = elemento;
             elemento = elemento.getProximo();
         }
-
+        return null;
     }
 
     private void verificarSeEhValidaA(int posicao) {
@@ -112,17 +114,22 @@ public class Lista {
         return quantidadeAlunosCadastrados;
     }
 
+    //one liner method
+    public boolean estahVazia() {
+        return (this.tamanho() == 0) ? true : false;
+    }
+
     @Override
     public String toString() {
         return this.imprimir(this.nomeClasse());
     }
 
-    protected String nomeClasse(){
+    protected String nomeClasse() {
         return this.getClass().getSimpleName();
     }
-    
-    protected String imprimir(String tipo){
-        String impressao = tipo+ " {\n\t" + "quantidade=" + tamanho() + ",";
+
+    protected String imprimir(String tipo) {
+        String impressao = tipo + " {\n\t" + "quantidade=" + tamanho() + ",";
 
         ElementoLista iterando = this.inicio;
         for (int i = 0; i < tamanho(); i++) {

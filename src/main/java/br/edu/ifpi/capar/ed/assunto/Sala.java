@@ -37,6 +37,12 @@ public class Sala {
         fatima.idade = 19;
         fatima.materia = "ingles";
 
+        fila.adicionar(fatima);
+        fila.adicionar(jamile);
+        fila.adicionar(manoel);
+        System.out.println(fila);
+        fila.remover();
+        fila.remover();
         System.out.println(fila);
         
     }
